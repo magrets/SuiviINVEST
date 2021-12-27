@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Mois {
+public class Mois implements Serializable {
     private final String nom;
     private double depot;
     private double bonus;
@@ -14,6 +15,13 @@ public class Mois {
         depot = verifDepot();
         bonus = verifBonus();
         interet = verifInteret();
+    }
+
+    public void afficherMois(){
+        System.out.println("Mois de " + nom);
+        System.out.println("Dépot : " + depot);
+        System.out.println("Bonus : " + bonus);
+        System.out.println("Interet : " + interet);
     }
 
     private double verifDepot(){
@@ -43,4 +51,7 @@ public class Mois {
         return tmp;
     }
 
+    public String getNom(){
+        return nom;
+    }
 }
